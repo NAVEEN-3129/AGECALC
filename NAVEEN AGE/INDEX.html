@@ -1,0 +1,91 @@
+<html>
+<title>www.agecalc.com</title>
+
+<script>
+function ageCalc() {
+    var values = document.getElementById("dob").value;
+    var dob = new Date(values);
+    if(values == null || values =='')
+     {
+      document.getElementById("error_message").innerHTML = "**Choose a date please..!!!";  
+      return false; 
+      
+    } 
+    else
+     {
+  
+    var month_diff = Date.now() - dob.getTime();
+    
+    var age_dt = new Date(month_diff);
+ 
+    var year = age_dt.getUTCFullYear();
+  
+    var age = Math.abs(year - 1970);
+    
+    return document.getElementById("result").innerHTML = "Age is: " + age + " years ";
+    }
+}
+</script>
+<style>
+  span 
+  {
+    color:red;
+  }
+  h3{
+  color: blue;
+    text-align: center;
+    
+  }
+  h1{
+    color:rgb(15, 75, 255);
+    text-align: center;
+  }
+
+    
+  .naveen
+  {
+    background-color:white;
+    border-radius: 10px;
+    padding:30px;
+    width:500px;
+    box-shadow:8px 8px 15px 15px rgb(0, 255, 242);
+    margin:20vh auto 0 auto;
+  }
+  input
+  {
+    margin-left: 20px;
+    padding: 5px;
+  }
+  button{
+    background-color:blue;
+    border:4px solid blue;
+    color:whitesmoke;
+    border-radius: 5px;
+    margin:10px;
+    padding:5px;
+    cursor:pointer;
+    width:100%;
+    font-size: 20px;
+}
+body{
+  background-image: url("https://i.pinimg.com/originals/21/5c/7f/215c7fdca6033092baa04b35c17466bd.gif");
+  background-size: cover;
+}
+
+</style>
+<body>
+<div class="naveen">
+  
+    
+<h1>AGE CALCULATOR<br> <br> </h1> 
+
+
+<b> Enter Date of Birth : <input type=date id ="dob"> </b>
+<span id = "error_message"> </span> <br><br>  
+
+
+<button type="submit" onclick = "ageCalc()"> Calculate age </button> <br><br>
+<h3 id="result"><img src=" https://cdn.dribbble.com/users/2973561/screenshots/5757826/media/221d6bfc1960ab98a7585fcc2a4d0181.gif" width="160" height="125"></h3> 
+</div>
+</body>
+</html>
